@@ -1,4 +1,4 @@
 alias cat=bat
 
-export BAT_THEME=OneHalfLight
+export BAT_THEME=zenburn
 export EDITOR=vim
