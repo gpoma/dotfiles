@@ -26,6 +26,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'lumiliet/vim-twig'
 Plugin 'cocopon/iceberg.vim'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,6 +36,7 @@ colorscheme iceberg
 
 " Config plugin
 let g:airline_theme='iceberg'
+let g:airline#extensions#tabline#enabled = 1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -46,3 +48,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_php_checkers = ['php']
+
+let g:syntastic_twig_checkers = ['twiglint']
+let g:syntastic_twig_twiglint_exec = 'php'
+let g:syntastic_twig_twiglint_exe = 'php /home/gabriel/.config/composer/vendor/bin/twig-lint'
+
+nmap <F8> :TagbarToggle<CR>
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-B> :bprev<CR>
+nnoremap <C-L> :ls<CR>
