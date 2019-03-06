@@ -15,6 +15,10 @@ set nocompatible
 set number
 set hlsearch
 
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+let g:ale_completion_enabled = 1
+
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -35,10 +39,13 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'lumiliet/vim-twig'
 Plugin 'cocopon/iceberg.vim'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,20 +57,15 @@ colorscheme iceberg
 let g:airline_theme='iceberg'
 let g:airline#extensions#tabline#enabled = 1
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+let g:ale_linters = { 'php': ['php', 'psalm'] }
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
 
-let g:syntastic_php_checkers = ['php']
-
-let g:syntastic_twig_checkers = ['twiglint']
-let g:syntastic_twig_twiglint_exec = 'php'
-let g:syntastic_twig_twiglint_exe = 'php /home/gabriel/.config/composer/vendor/bin/twig-lint'
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
 
 nmap <F8> :TagbarToggle<CR>
 nnoremap <C-N> :bnext<CR>
