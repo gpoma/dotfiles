@@ -14,6 +14,8 @@ set encoding=utf-8
 set nocompatible
 set number
 set hlsearch
+set conceallevel=2
+set termguicolors
 
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
@@ -46,20 +48,34 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'junegunn/gv.vim'
+Plugin 'arcticicestudio/nord-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme iceberg
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_uniform_diff_background = 1
+colorscheme nord
+
+noremap <F5> :set list!<CR>
+inoremap <F5> <C-o>:set list!<CR>
+cnoremap <F5> <C-c>:set list!<CR>
+set listchars=eol:↲,space:·,tab:>-,trail:~,extends:>,precedes:<
 
 " Config plugin
-let g:airline_theme='iceberg'
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 let g:ale_linters = { 'php': ['php', 'psalm'] }
+
+let g:ale_virtualenv_dir_names = []
 
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
