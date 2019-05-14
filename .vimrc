@@ -62,6 +62,7 @@ let g:nord_italic_comments = 1
 let g:nord_uniform_diff_background = 1
 colorscheme nord
 
+noremap <F4> :noh<CR>
 noremap <F5> :set list!<CR>
 inoremap <F5> <C-o>:set list!<CR>
 cnoremap <F5> <C-c>:set list!<CR>
@@ -70,6 +71,7 @@ set listchars=eol:↲,space:·,tab:>-,trail:~,extends:>,precedes:<
 " Config plugin
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
