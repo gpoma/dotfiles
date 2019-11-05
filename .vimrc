@@ -51,10 +51,30 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'junegunn/gv.vim'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'mechatroner/rainbow_csv'
+Plugin 'tpope/vim-commentary'
+Plugin 'mhinz/vim-signify'
+" Search & Replace
+Plugin 'tpope/vim-abolish'
+" Search
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" PHPDoc
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <M-b> :call pdv#DocumentWithSnip()<CR>
 
 let g:nord_italic = 1
 let g:nord_underline = 1
@@ -63,9 +83,9 @@ let g:nord_uniform_diff_background = 1
 colorscheme nord
 
 noremap <F4> :noh<CR>
-noremap <F5> :set list!<CR>
-inoremap <F5> <C-o>:set list!<CR>
-cnoremap <F5> <C-c>:set list!<CR>
+noremap <F3> :set list!<CR>
+inoremap <F3> <C-o>:set list!<CR>
+cnoremap <F3> <C-c>:set list!<CR>
 set listchars=eol:↲,space:·,tab:>-,trail:~,extends:>,precedes:<
 
 " Config plugin
