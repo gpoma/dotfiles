@@ -65,6 +65,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " rust
 Plugin 'rust-lang/rust.vim'
+" database helper
+Plugin 'tpope/vim-dadbod'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
