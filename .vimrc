@@ -17,6 +17,7 @@ set hlsearch
 set conceallevel=2
 set termguicolors
 set list
+set colorcolumn=80,120
 
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
