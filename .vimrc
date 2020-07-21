@@ -68,6 +68,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'rust-lang/rust.vim'
 " database helper
 Plugin 'tpope/vim-dadbod'
+" Blade php template
+Plugin 'jwalton512/vim-blade'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
