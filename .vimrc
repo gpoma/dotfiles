@@ -10,6 +10,15 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+nnoremap <Space> <Nop>
+let mapleader=" "
+
+noremap <F4> :noh<CR>
+noremap <F3> :set list!<CR>
+inoremap <F3> <C-o>:set list!<CR>
+cnoremap <F3> <C-c>:set list!<CR>
+set listchars=eol:↲,space:·,tab:>-,trail:~,extends:>,precedes:<
+
 set encoding=utf-8
 set nocompatible
 set number
@@ -45,7 +54,7 @@ Plugin 'stanangeloff/php.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'lumiliet/vim-twig'
 Plugin 'cocopon/iceberg.vim'
@@ -61,9 +70,14 @@ Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-signify'
 " Search & Replace
 Plugin 'tpope/vim-abolish'
+
 " Search
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-g> :Rg<CR>
+nnoremap <silent><leader>l :Buffers<CR>
+
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -92,15 +106,6 @@ let g:nord_underline = 1
 let g:nord_italic_comments = 1
 let g:nord_uniform_diff_background = 1
 colorscheme nord
-
-nnoremap <Space> <Nop>
-let mapleader=" "
-
-noremap <F4> :noh<CR>
-noremap <F3> :set list!<CR>
-inoremap <F3> <C-o>:set list!<CR>
-cnoremap <F3> <C-c>:set list!<CR>
-set listchars=eol:↲,space:·,tab:>-,trail:~,extends:>,precedes:<
 
 " Config plugin
 let g:airline_theme='nord'
