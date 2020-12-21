@@ -32,7 +32,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Git
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -89,6 +92,9 @@ let g:nord_underline = 1
 let g:nord_italic_comments = 1
 let g:nord_uniform_diff_background = 1
 colorscheme nord
+
+nnoremap <Space> <Nop>
+let mapleader=" "
 
 noremap <F4> :noh<CR>
 noremap <F3> :set list!<CR>
