@@ -127,4 +127,4 @@ let g:vim_markdown_strikethrough = 1
 nmap <F8> :TagbarToggle<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-B> :bprev<CR>
-nnoremap <C-L> :ls<CR>
+nnoremap <C-L> :Buffers<CR>
