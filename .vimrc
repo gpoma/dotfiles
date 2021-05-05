@@ -114,7 +114,7 @@ let g:airline_powerline_fonts = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
-let g:ale_linters = { 'php': ['php', 'psalm'] }
+let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['eslint', 'jscs', 'jshint', 'standard'] }
 
 let g:ale_virtualenv_dir_names = []
 
