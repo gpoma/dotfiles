@@ -133,3 +133,9 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-B> :bprev<CR>
 nnoremap <C-L> :Buffers<CR>
+
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 20
+let g:netrw_browse_split = 4
