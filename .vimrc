@@ -83,8 +83,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " rust
 Plugin 'rust-lang/rust.vim'
-" database helper
-Plugin 'tpope/vim-dadbod'
+"
 " Blade php template
 Plugin 'jwalton512/vim-blade'
 
