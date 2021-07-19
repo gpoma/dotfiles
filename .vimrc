@@ -87,6 +87,12 @@ Plugin 'rust-lang/rust.vim'
 " Blade php template
 Plugin 'jwalton512/vim-blade'
 
+" TOML
+Plugin 'cespare/vim-toml'
+
+" Ansible
+Plugin 'pearofducks/ansible-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
