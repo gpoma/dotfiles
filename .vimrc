@@ -13,6 +13,7 @@ inoremap <Right> <NOP>
 nnoremap <Space> <Nop>
 let mapleader=" "
 
+noremap <F5> :set nowrap!<CR>
 noremap <F4> :noh<CR>
 noremap <F3> :set list!<CR>
 inoremap <F3> <C-o>:set list!<CR>
@@ -31,6 +32,8 @@ set colorcolumn=80,120
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_autoimport = 1
 
 filetype off
 
@@ -46,15 +49,21 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 
 Plugin 'airblade/vim-gitgutter'
+command! Gqf GitGutterQuickFix | copen
+set updatetime=1000
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
+"
+" Completion
 Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
 Plugin 'stanangeloff/php.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
-"Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'lumiliet/vim-twig'
 Plugin 'cocopon/iceberg.vim'
@@ -67,7 +76,7 @@ Plugin 'junegunn/gv.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'tpope/vim-commentary'
-Plugin 'mhinz/vim-signify'
+
 " Search & Replace
 Plugin 'tpope/vim-abolish'
 
@@ -139,4 +148,8 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 20
 let g:netrw_browse_split = 4
-noremap <C-W> :Vex<CR>
+"noremap <C-W> :Vex<CR>
+
+" Git hotkeys
+nnoremap gb :G blame<CR>
+nnoremap gB :GBrowse<CR>
