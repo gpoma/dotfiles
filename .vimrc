@@ -18,7 +18,7 @@ noremap <F4> :noh<CR>
 noremap <F3> :set list!<CR>
 inoremap <F3> <C-o>:set list!<CR>
 cnoremap <F3> <C-c>:set list!<CR>
-set listchars=eol:↲,space:·,tab:>-,trail:~,extends:>,precedes:<,nbsp:␣
+set listchars=eol:¬,space:·,tab:>-,trail:~,extends:>,precedes:<,nbsp:␣
 
 set encoding=utf-8
 set nocompatible
