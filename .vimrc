@@ -34,6 +34,7 @@ set colorcolumn=80,120
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_autoimport = 1
+let g:ale_set_balloons = 1
 
 filetype off
 
@@ -50,7 +51,7 @@ Plugin 'tpope/vim-rhubarb'
 
 Plugin 'airblade/vim-gitgutter'
 command! Gqf GitGutterQuickFix | copen
-set updatetime=1000
+set updatetime=2000
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -129,6 +130,7 @@ let g:airline_powerline_fonts = 1
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['eslint', 'jscs', 'jshint', 'standard'] }
+let g:ale_fixers  = { 'php': ['php_cs_fixer'] }
 
 let g:ale_virtualenv_dir_names = []
 
