@@ -48,7 +48,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
-
+Plugin 'junegunn/gv.vim'
 Plugin 'airblade/vim-gitgutter'
 command! Gqf GitGutterQuickFix | copen
 set updatetime=2000
@@ -61,56 +61,42 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
+" Syntax
 Plugin 'stanangeloff/php.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'w0rp/ale'
 Plugin 'lumiliet/vim-twig'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'godlygeek/tabular'
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'jwalton512/vim-blade'
+Plugin 'pearofducks/ansible-vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-surround'
-Plugin 'junegunn/gv.vim'
+
+" Colorscheme
 Plugin 'arcticicestudio/nord-vim'
+
+" Tags
+Plugin 'majutsushi/tagbar'
+Plugin 'ludovicchabant/vim-gutentags'
+
+" LSP
+Plugin 'w0rp/ale'
+
+" Misc
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-surround'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'tpope/vim-commentary'
-
-" Search & Replace
-Plugin 'tpope/vim-abolish'
 
 " Search
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-g> :Rg<CR>
-nnoremap <silent><leader>l :Buffers<CR>
-
-" Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-" rust
-Plugin 'rust-lang/rust.vim'
-"
-" Blade php template
-Plugin 'jwalton512/vim-blade'
-
-" TOML
-Plugin 'cespare/vim-toml'
-
-" Ansible
-Plugin 'pearofducks/ansible-vim'
+nnoremap <C-L> :Buffers<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " PHPDoc
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
@@ -143,7 +129,6 @@ let g:vim_markdown_strikethrough = 1
 nmap <F8> :TagbarToggle<CR>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-B> :bprev<CR>
-nnoremap <C-L> :Buffers<CR>
 
 " netrw
 let g:netrw_liststyle = 3
