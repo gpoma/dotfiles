@@ -121,6 +121,7 @@ let g:airline_powerline_fonts = 1
 let g:ale_fix_on_save = 1
 let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['eslint', 'jscs', 'jshint', 'standard'] }
 let g:ale_fixers  = { 'php': ['php_cs_fixer'] }
+let g:ale_html_tidy_options = '-q -e -language en --drop-empty-elements no'
 
 let g:ale_virtualenv_dir_names = []
 
