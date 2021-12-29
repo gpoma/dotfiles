@@ -145,6 +145,8 @@ let g:netrw_browse_split = 4
 " Git hotkeys
 nnoremap gb :G blame<CR>
 nnoremap gB :GBrowse<CR>
+nnoremap gA :G add -p %<CR>
+nnoremap gAA :G add -p %<CR>
 
 " Insert timestamp at the end of the line in this format: 2021-10-11
 nnoremap <C-t><C-s> m'A<C-R>=strftime('%Y-%m-%d')<CR>
