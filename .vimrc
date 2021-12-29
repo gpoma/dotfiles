@@ -72,6 +72,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'jwalton512/vim-blade'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'posva/vim-vue'
 
 " Colorscheme
 Plugin 'arcticicestudio/nord-vim'
