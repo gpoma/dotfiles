@@ -15,6 +15,7 @@ fi
 # Composer bin dans le path
 PATH=$PATH:$HOME/.config/composer/vendor/bin/:$HOME/.local/share/bin/
 PATH=$PATH:$HOME/.cargo/bin/ # for rust
+PATH=$PATH:/usr/local/bin/ # for croc
 PATH=$PATH:$HOME/.local/bin/
 PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin/ # For mailcatcher
 
