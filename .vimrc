@@ -34,7 +34,10 @@ set colorcolumn=80,120
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_autoimport = 1
-let g:ale_set_balloons = 1
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+nmap <leader><leader>ah <Plug>(ale_hover)
+nmap <leader><leader>ad <Plug>(ale_detail)
 
 filetype off
 
