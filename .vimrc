@@ -88,8 +88,11 @@ Plugin 'w0rp/ale'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
-Plugin 'mechatroner/rainbow_csv'
 Plugin 'tpope/vim-commentary'
+Plugin 'mechatroner/rainbow_csv'
+nnoremap <leader><leader>RD :RainbowDelim<CR>
+nnoremap <leader><leader>RA :RainbowAlign<CR>
+nnoremap <leader><leader>RS :RainbowShrink<CR>
 
 " Search
 Plugin 'junegunn/fzf'
