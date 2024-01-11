@@ -20,6 +20,12 @@ inoremap <F3> <C-o>:set list!<CR>
 cnoremap <F3> <C-c>:set list!<CR>
 set listchars=eol:¬,space:·,tab:>-,trail:~,extends:>,precedes:<,nbsp:␣
 
+" Resize
+noremap <C-Up> :resize -2<CR>
+noremap <C-Down> :resize +2<CR>
+noremap <C-Left> :vertical resize -2<CR>
+noremap <C-Right> :vertical resize +2<CR>
+
 set encoding=utf-8
 set nocompatible
 set number
@@ -29,12 +35,17 @@ set termguicolors
 set list
 set colorcolumn=80,120
 
+" tmux/tmate
+"set background=dark
+set t_Co=256
+
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_autoimport = 1
-let g:ale_floating_preview = 1
+" let g:ale_cursor_detail = 1
+" let g:ale_floating_preview = 1
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 nmap <leader><leader>ah <Plug>(ale_hover)
 nmap <leader><leader>ad <Plug>(ale_detail)
@@ -59,7 +70,7 @@ set updatetime=2000
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
-"
+
 " Completion
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -73,9 +84,16 @@ Plugin 'jwalton512/vim-blade'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'posva/vim-vue'
+Plugin 'ap/vim-css-color'
+
+" Syntax Svelte
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'evanleck/vim-svelte'
 
 " Colorscheme
-Plugin 'arcticicestudio/nord-vim'
+Plugin 'nordtheme/vim'
+Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
 
 " Tags
 Plugin 'majutsushi/tagbar'
@@ -98,6 +116,8 @@ nnoremap <leader><leader>RS :RainbowShrink<CR>
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>sg :GFiles<CR>
+nnoremap <leader>sf :Files<CR>
 nnoremap <C-g> :Rg<CR>
 nnoremap <C-L> :Buffers<CR>
 
@@ -109,22 +129,23 @@ filetype plugin indent on    " required
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <M-b> :call pdv#DocumentWithSnip()<CR>
 
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_diff_background = 1
-colorscheme nord
+" let g:nord_italic = 1
+" let g:nord_underline = 1
+" let g:nord_italic_comments = 1
+" let g:nord_uniform_diff_background = 1
+colorscheme catppuccin_frappe " nord, catppuccin_{latte,frappe,mocha,mocchiato}
 
 " Config plugin
-let g:airline_theme='nord'
+" let g:airline_theme='catppuccin_frappe'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
-let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['eslint', 'jscs', 'jshint', 'standard'] }
+let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['eslint', 'jscs', 'jshint', 'standard'], 'python': ['flake8'] }
 let g:ale_fixers  = { 'php': ['php_cs_fixer'] }
 let g:ale_html_tidy_options = '-q -e -language en --drop-empty-elements no'
+let g:ale_python_flake8_options = '--ignore=E501'
+let g:ale_sh_shellcheck_options = '-x'
 
 let g:ale_virtualenv_dir_names = []
 
