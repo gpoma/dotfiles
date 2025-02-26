@@ -94,6 +94,7 @@ Plugin 'evanleck/vim-svelte'
 " Colorscheme
 Plugin 'nordtheme/vim'
 Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
+Plugin 'rose-pine/vim', { 'name': 'rose-pine' }
 
 " Tags
 Plugin 'majutsushi/tagbar'
@@ -115,6 +116,7 @@ nnoremap <leader><leader>RS :RainbowShrink<CR>
 " Search
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>sg :GFiles<CR>
 nnoremap <leader>sf :Files<CR>
@@ -141,11 +143,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Set this variable to 1 to fix files when you save them.
-let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['eslint', 'jscs', 'jshint', 'standard'], 'python': ['flake8'] }
+let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['deno', 'eslint', 'jscs', 'jshint', 'standard'], 'python': ['flake8'] }
 let g:ale_fixers  = { 'php': ['php_cs_fixer'] }
 let g:ale_html_tidy_options = '-q -e -language en --drop-empty-elements no'
 let g:ale_python_flake8_options = '--ignore=E501'
 let g:ale_sh_shellcheck_options = '-x'
+let g:ale_sh_shellcheck_change_directory = 0
 
 let g:ale_virtualenv_dir_names = []
 
@@ -167,10 +170,10 @@ let g:netrw_browse_split = 4
 "noremap <C-W> :Vex<CR>
 
 " Git hotkeys
-nnoremap gb :G blame<CR>
+nnoremap gb :Git blame --date=relative<CR>
 nnoremap gB :GBrowse<CR>
-nnoremap gA :G add -p %<CR>
-nnoremap gAA :G add -p %<CR>
+nnoremap gA :Git add -p %<CR>
+nnoremap gAA :Git add -p %<CR>
 
 " Insert timestamp at the end of the line in this format: 2021-10-11
 nnoremap <C-t><C-s> m'A<C-R>=strftime('%Y-%m-%d')<CR>
