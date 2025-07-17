@@ -30,7 +30,7 @@ set encoding=utf-8
 set nocompatible
 set number
 set hlsearch
-set conceallevel=2
+" set conceallevel=2
 set termguicolors
 set list
 set colorcolumn=80,120
