@@ -1,0 +1,32 @@
+# Halloy config.
+#
+# For a complete list of available options,
+# please visit https://halloy.squidowl.org/configuration/index.html
+
+theme = "Catppuccin Latte"
+
+[servers.liberachat]
+nickname = "xvzf"
+alt_nicks = ["cvzf"]
+server = "irc.eu.libera.chat"
+channels = ["#24eme"]
+chathistory = true
+
+[servers.liberachat.sasl.plain]
+username = "xvzf"
+
+[buffer.channel.topic]
+enabled = true
+
+[notifications]
+highlight = { show_toast = true }
+direct_message = { show_toast = true }
+
+[font]
+size = 18
+
+[preview]
+enabled = false
+
+[highlight.nickname]
+
