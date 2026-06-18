@@ -34,6 +34,9 @@ set hlsearch
 set termguicolors
 set list
 set colorcolumn=80,120
+syntax on
+set mouse=a
+set incsearch
 
 " tmux/tmate
 "set background=dark
@@ -49,6 +52,8 @@ let g:ale_completion_autoimport = 1
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 nmap <leader><leader>ah <Plug>(ale_hover)
 nmap <leader><leader>ad <Plug>(ale_detail)
+nmap <leader><leader>gd <Plug>(ale_go_to_definition)
+nmap <leader><leader>gf <Plug>(ale_find_references)
 
 filetype off
 
@@ -78,23 +83,21 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " Syntax
 Plugin 'stanangeloff/php.vim'
 Plugin 'lumiliet/vim-twig'
-Plugin 'rust-lang/rust.vim'
-Plugin 'cespare/vim-toml'
 Plugin 'jwalton512/vim-blade'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'posva/vim-vue'
 Plugin 'ap/vim-css-color'
 
 " Syntax Svelte
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'evanleck/vim-svelte'
 
 " Colorscheme
 Plugin 'nordtheme/vim'
 Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
 Plugin 'rose-pine/vim', { 'name': 'rose-pine' }
+Plugin 'zenbones-theme/zenbones.nvim'
+Plugin 'yorickpeterse/vim-paper'
 
 " Tags
 Plugin 'majutsushi/tagbar'
@@ -135,16 +138,17 @@ nnoremap <buffer> <M-b> :call pdv#DocumentWithSnip()<CR>
 " let g:nord_underline = 1
 " let g:nord_italic_comments = 1
 " let g:nord_uniform_diff_background = 1
-colorscheme catppuccin_frappe " nord, catppuccin_{latte,frappe,mocha,mocchiato}
+colorscheme tokyobones " nord, *bones, paper, catppuccin_{latte,frappe,mocha,mocchiato}
 
 " Config plugin
 " let g:airline_theme='catppuccin_frappe'
+let g:airline_theme='sol'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Set this variable to 1 to fix files when you save them.
-let g:ale_linters = { 'php': ['php', 'psalm'], 'javascript': ['deno', 'eslint', 'jscs', 'jshint', 'standard'], 'python': ['flake8'] }
-let g:ale_fixers  = { 'php': ['php_cs_fixer'] }
+let g:ale_linters = { 'php': ['php', 'phpactor'], 'javascript': ['deno', 'eslint', 'jscs', 'jshint', 'standard'], 'python': ['flake8'] }
+let g:ale_fixers  = { 'php': ['php_cs_fixer'], 'sh': ['shfmt'] }
 let g:ale_html_tidy_options = '-q -e -language en --drop-empty-elements no'
 let g:ale_python_flake8_options = '--ignore=E501'
 let g:ale_sh_shellcheck_options = '-x'
